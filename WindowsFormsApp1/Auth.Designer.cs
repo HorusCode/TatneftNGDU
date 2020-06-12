@@ -50,9 +50,12 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.closeApp = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.xuiGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeApp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // xuiObjectEllipse1
@@ -65,6 +68,7 @@
             // 
             this.xuiGradientPanel1.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(47)))));
             this.xuiGradientPanel1.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(47)))));
+            this.xuiGradientPanel1.Controls.Add(this.pictureBox2);
             this.xuiGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.xuiGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.xuiGradientPanel1.Name = "xuiGradientPanel1";
@@ -314,6 +318,17 @@
             this.closeApp.Zoom = 10;
             this.closeApp.Click += new System.EventHandler(this.closeApp_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 93);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(341, 293);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -331,9 +346,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Auth";
             this.Text = "Form1";
+            this.xuiGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeApp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,6 +370,7 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private Bunifu.Framework.UI.BunifuImageButton closeApp;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

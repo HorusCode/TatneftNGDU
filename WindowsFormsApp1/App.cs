@@ -17,5 +17,19 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+
+        private void moveSidebarDivider(Control btn)
+        {
+            sidebarDivider.Top = btn.Top;
+            sidebarDivider.Height = btn.Height;
+        }
+
+        private void usersBtn_Click(object sender, EventArgs e)
+        {
+            moveSidebarDivider(usersBtn);
+        }
+
+      
     }
 }
