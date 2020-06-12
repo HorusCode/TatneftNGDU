@@ -18,6 +18,8 @@ namespace Data.Models
         public String placeliving {get; set;}
         public DateTime birthday {get; set;}
         public String passport_place {get; set;}
+        public String email {get; set;}
+        public String password {get; set;}
         [Foreign(typeof(Role))]
         public Int32 role_id {get; set;}
         public DateTime created_at {get; set;}

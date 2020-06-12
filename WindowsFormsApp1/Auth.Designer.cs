@@ -42,13 +42,17 @@
             this.xuiGradientPanel1 = new XanderUI.XUIGradientPanel();
             this.loginBtn = new XanderUI.XUIButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.passwordInput = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.emailInput = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.closeApp = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeApp)).BeginInit();
             this.SuspendLayout();
             // 
             // xuiObjectEllipse1
@@ -92,6 +96,7 @@
             this.loginBtn.TabIndex = 1;
             this.loginBtn.TextColor = System.Drawing.Color.White;
             this.loginBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // label1
             // 
@@ -103,78 +108,79 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Пароль";
             // 
-            // bunifuTextBox1
+            // passwordInput
             // 
-            this.bunifuTextBox1.AcceptsReturn = false;
-            this.bunifuTextBox1.AcceptsTab = false;
-            this.bunifuTextBox1.AnimationSpeed = 200;
-            this.bunifuTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTextBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextBox1.BackgroundImage")));
-            this.bunifuTextBox1.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.bunifuTextBox1.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.bunifuTextBox1.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuTextBox1.BorderColorIdle = System.Drawing.Color.Silver;
-            this.bunifuTextBox1.BorderRadius = 1;
-            this.bunifuTextBox1.BorderThickness = 1;
-            this.bunifuTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox1.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.bunifuTextBox1.DefaultText = "";
-            this.bunifuTextBox1.FillColor = System.Drawing.Color.White;
-            this.bunifuTextBox1.HideSelection = true;
-            this.bunifuTextBox1.IconLeft = null;
-            this.bunifuTextBox1.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox1.IconPadding = 10;
-            this.bunifuTextBox1.IconRight = null;
-            this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(383, 361);
-            this.bunifuTextBox1.MaxLength = 32767;
-            this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.bunifuTextBox1.Modified = false;
-            this.bunifuTextBox1.Multiline = false;
-            this.bunifuTextBox1.Name = "bunifuTextBox1";
+            this.passwordInput.AcceptsReturn = false;
+            this.passwordInput.AcceptsTab = false;
+            this.passwordInput.AnimationSpeed = 200;
+            this.passwordInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.passwordInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.passwordInput.BackColor = System.Drawing.Color.Transparent;
+            this.passwordInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("passwordInput.BackgroundImage")));
+            this.passwordInput.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.passwordInput.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.passwordInput.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.passwordInput.BorderColorIdle = System.Drawing.Color.Silver;
+            this.passwordInput.BorderRadius = 1;
+            this.passwordInput.BorderThickness = 1;
+            this.passwordInput.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.passwordInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordInput.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.passwordInput.DefaultText = "";
+            this.passwordInput.FillColor = System.Drawing.Color.White;
+            this.passwordInput.HideSelection = true;
+            this.passwordInput.IconLeft = null;
+            this.passwordInput.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordInput.IconPadding = 10;
+            this.passwordInput.IconRight = null;
+            this.passwordInput.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordInput.Lines = new string[0];
+            this.passwordInput.Location = new System.Drawing.Point(383, 361);
+            this.passwordInput.MaxLength = 32767;
+            this.passwordInput.MinimumSize = new System.Drawing.Size(1, 1);
+            this.passwordInput.Modified = false;
+            this.passwordInput.Multiline = false;
+            this.passwordInput.Name = "passwordInput";
             stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
             stateProperties5.FillColor = System.Drawing.Color.Empty;
             stateProperties5.ForeColor = System.Drawing.Color.Empty;
             stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnActiveState = stateProperties5;
+            this.passwordInput.OnActiveState = stateProperties5;
             stateProperties6.BorderColor = System.Drawing.Color.Empty;
             stateProperties6.FillColor = System.Drawing.Color.White;
             stateProperties6.ForeColor = System.Drawing.Color.Empty;
             stateProperties6.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.bunifuTextBox1.OnDisabledState = stateProperties6;
+            this.passwordInput.OnDisabledState = stateProperties6;
             stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties7.FillColor = System.Drawing.Color.Empty;
             stateProperties7.ForeColor = System.Drawing.Color.Empty;
             stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnHoverState = stateProperties7;
+            this.passwordInput.OnHoverState = stateProperties7;
             stateProperties8.BorderColor = System.Drawing.Color.Silver;
             stateProperties8.FillColor = System.Drawing.Color.White;
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnIdleState = stateProperties8;
-            this.bunifuTextBox1.PasswordChar = '\0';
-            this.bunifuTextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.bunifuTextBox1.PlaceholderText = "Введите пароль...";
-            this.bunifuTextBox1.ReadOnly = false;
-            this.bunifuTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.bunifuTextBox1.SelectedText = "";
-            this.bunifuTextBox1.SelectionLength = 0;
-            this.bunifuTextBox1.SelectionStart = 0;
-            this.bunifuTextBox1.ShortcutsEnabled = true;
-            this.bunifuTextBox1.Size = new System.Drawing.Size(312, 44);
-            this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.bunifuTextBox1.TabIndex = 4;
-            this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bunifuTextBox1.TextMarginBottom = 0;
-            this.bunifuTextBox1.TextMarginLeft = 5;
-            this.bunifuTextBox1.TextMarginTop = 0;
-            this.bunifuTextBox1.TextPlaceholder = "Введите пароль...";
-            this.bunifuTextBox1.UseSystemPasswordChar = false;
-            this.bunifuTextBox1.WordWrap = true;
+            this.passwordInput.OnIdleState = stateProperties8;
+            this.passwordInput.PasswordChar = '\0';
+            this.passwordInput.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.passwordInput.PlaceholderText = "Введите пароль...";
+            this.passwordInput.ReadOnly = false;
+            this.passwordInput.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.passwordInput.SelectedText = "";
+            this.passwordInput.SelectionLength = 0;
+            this.passwordInput.SelectionStart = 0;
+            this.passwordInput.ShortcutsEnabled = true;
+            this.passwordInput.Size = new System.Drawing.Size(312, 44);
+            this.passwordInput.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
+            this.passwordInput.TabIndex = 4;
+            this.passwordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.passwordInput.TextMarginBottom = 0;
+            this.passwordInput.TextMarginLeft = 5;
+            this.passwordInput.TextMarginTop = 0;
+            this.passwordInput.TextPlaceholder = "Введите пароль...";
+            this.passwordInput.UseSystemPasswordChar = false;
+            this.passwordInput.WordWrap = true;
+            this.passwordInput.Leave += new System.EventHandler(this.passwordInput_Leave);
             // 
             // emailInput
             // 
@@ -248,6 +254,7 @@
             this.emailInput.TextPlaceholder = "Введите e-mail...";
             this.emailInput.UseSystemPasswordChar = false;
             this.emailInput.WordWrap = true;
+            this.emailInput.Leave += new System.EventHandler(this.emailInput_Leave);
             // 
             // label2
             // 
@@ -287,16 +294,37 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
+            // 
+            // closeApp
+            // 
+            this.closeApp.BackColor = System.Drawing.Color.Transparent;
+            this.closeApp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeApp.Image = ((System.Drawing.Image)(resources.GetObject("closeApp.Image")));
+            this.closeApp.ImageActive = null;
+            this.closeApp.Location = new System.Drawing.Point(681, 12);
+            this.closeApp.Name = "closeApp";
+            this.closeApp.Size = new System.Drawing.Size(32, 38);
+            this.closeApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.closeApp.TabIndex = 9;
+            this.closeApp.TabStop = false;
+            this.closeApp.Zoom = 10;
+            this.closeApp.Click += new System.EventHandler(this.closeApp_Click);
+            // 
             // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 486);
+            this.Controls.Add(this.closeApp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.emailInput);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.bunifuTextBox1);
+            this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.xuiGradientPanel1);
@@ -304,6 +332,8 @@
             this.Name = "Auth";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeApp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,12 +345,14 @@
         private XanderUI.XUIButton loginBtn;
         private XanderUI.XUIGradientPanel xuiGradientPanel1;
         private System.Windows.Forms.Label label1;
-        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox bunifuTextBox1;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox passwordInput;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox emailInput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private Bunifu.Framework.UI.BunifuImageButton closeApp;
     }
 }
 
