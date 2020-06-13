@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.UserControls;
 
 namespace WindowsFormsApp1
 {
@@ -16,6 +17,7 @@ namespace WindowsFormsApp1
         public App(User user)
         {
             InitializeComponent();
+            AddControlsPanel(new WorkersTableControl());
         }
 
 
@@ -25,11 +27,22 @@ namespace WindowsFormsApp1
             sidebarDivider.Height = btn.Height;
         }
 
+        private void AddControlsPanel(Control control)
+        {
+            control.Dock = DockStyle.Fill;
+            container.Controls.Clear();
+            container.Controls.Add(control);
+        }
+
+
         private void usersBtn_Click(object sender, EventArgs e)
         {
             moveSidebarDivider(usersBtn);
         }
 
-      
+        private void closeApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

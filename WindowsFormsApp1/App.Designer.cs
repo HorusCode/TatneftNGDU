@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(App));
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.closeApp = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.sidebarDivider = new System.Windows.Forms.Panel();
@@ -38,18 +38,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.userFullName = new System.Windows.Forms.Label();
             this.userRole = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.header = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
+            this.bunifuDragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.closeApp)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.header.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bunifuElipse1
+            // bunifuElipse
             // 
-            this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this;
+            this.bunifuElipse.ElipseRadius = 5;
+            this.bunifuElipse.TargetControl = this;
             // 
             // closeApp
             // 
@@ -66,6 +67,7 @@
             this.closeApp.TabIndex = 10;
             this.closeApp.TabStop = false;
             this.closeApp.Zoom = 10;
+            this.closeApp.Click += new System.EventHandler(this.closeApp_Click);
             // 
             // panel1
             // 
@@ -140,17 +142,17 @@
             this.userRole.TabIndex = 14;
             this.userRole.Text = "{role}";
             // 
-            // panel2
+            // header
             // 
-            this.panel2.Controls.Add(this.userRole);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.closeApp);
-            this.panel2.Controls.Add(this.userFullName);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(225, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(708, 69);
-            this.panel2.TabIndex = 15;
+            this.header.Controls.Add(this.userRole);
+            this.header.Controls.Add(this.pictureBox1);
+            this.header.Controls.Add(this.closeApp);
+            this.header.Controls.Add(this.userFullName);
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(225, 0);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(708, 69);
+            this.header.TabIndex = 15;
             // 
             // container
             // 
@@ -160,13 +162,20 @@
             this.container.Size = new System.Drawing.Size(708, 564);
             this.container.TabIndex = 16;
             // 
+            // bunifuDragControl
+            // 
+            this.bunifuDragControl.Fixed = true;
+            this.bunifuDragControl.Horizontal = true;
+            this.bunifuDragControl.TargetControl = this.header;
+            this.bunifuDragControl.Vertical = true;
+            // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 633);
             this.Controls.Add(this.container);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.header);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -176,15 +185,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeApp)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.header.ResumeLayout(false);
+            this.header.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuImageButton closeApp;
         private System.Windows.Forms.Panel sidebarDivider;
@@ -192,7 +201,8 @@
         private System.Windows.Forms.Label userRole;
         private System.Windows.Forms.Label userFullName;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel header;
         private System.Windows.Forms.Panel container;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl;
     }
 }

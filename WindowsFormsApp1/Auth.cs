@@ -79,7 +79,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        public void closeApp_Click(object sender, EventArgs e)
+        private void closeApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
