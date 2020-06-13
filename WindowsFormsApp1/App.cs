@@ -44,7 +44,13 @@ namespace WindowsFormsApp1
 
         private void closeApp_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(0);
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.No;
+            this.Close();
         }
     }
 }

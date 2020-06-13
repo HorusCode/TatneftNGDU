@@ -47,9 +47,11 @@ namespace WindowsFormsApp1.UserControls
                     "Переквалифицировать"
                 });
             }
-
+           
         }
 
+
+     
         private void usersTable_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             var grid = (DataGridView)sender;
@@ -81,6 +83,32 @@ namespace WindowsFormsApp1.UserControls
                     e.Handled = true;
                 }
             }
+        }
+
+        private void searchData_TextChange(object sender, EventArgs e)
+        {
+            string search = searchData.Text;
+            usersTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            foreach (DataGridViewRow row in usersTable.Rows)
+            {
+                for(int i = 0; i < row.Cells.Count - 3; i++) // Чтобы не искал кнопки
+                {
+                    if (row.Cells[i].Value.ToString().Like(search))
+                    {
+                        row.Selected = true;
+                        break;
+                    } else
+                    {
+                        row.Selected = false;
+                    }
+                }
+                
+            }
+        }
+
+        private void reloadBtn_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }
