@@ -23,5 +23,10 @@ namespace Data.Models
         [Foreign(typeof(Role))]
         public Int32 role_id {get; set;}
         public DateTime created_at {get; set;}
- }
+
+        public string FullName
+        {
+            get { return $"{firstname} {secondname} {patronymic}"; }
+        }
+    }
 }

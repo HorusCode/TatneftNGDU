@@ -59,7 +59,7 @@
             this.closeApp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeApp.Image = ((System.Drawing.Image)(resources.GetObject("closeApp.Image")));
             this.closeApp.ImageActive = null;
-            this.closeApp.Location = new System.Drawing.Point(661, 16);
+            this.closeApp.Location = new System.Drawing.Point(928, 16);
             this.closeApp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.closeApp.Name = "closeApp";
             this.closeApp.Size = new System.Drawing.Size(35, 41);
@@ -78,7 +78,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(225, 633);
+            this.panel1.Size = new System.Drawing.Size(225, 700);
             this.panel1.TabIndex = 11;
             // 
             // sidebarDivider
@@ -151,7 +151,7 @@
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(225, 0);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(708, 69);
+            this.header.Size = new System.Drawing.Size(975, 69);
             this.header.TabIndex = 15;
             // 
             // container
@@ -159,7 +159,7 @@
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(225, 69);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(708, 564);
+            this.container.Size = new System.Drawing.Size(975, 631);
             this.container.TabIndex = 16;
             // 
             // bunifuDragControl
@@ -171,9 +171,9 @@
             // 
             // App
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 633);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.container);
             this.Controls.Add(this.header);
             this.Controls.Add(this.panel1);

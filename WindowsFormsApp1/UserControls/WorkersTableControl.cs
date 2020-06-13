@@ -34,16 +34,53 @@ namespace WindowsFormsApp1.UserControls
 
             DateTime date = DateTime.Now;
 
+            
+
             foreach (var user in users)
             {
                 usersTable.Rows.Add(new object[] {
-                    user.id, 
-                    user.firstname + " " + user.secondname + " " + user.patronymic,
-                    (int)date.Subtract(user.created_at).Days / 365, 
-                    user.GetRole().name
+                    user.FullName,
+                    (int)(date - user.created_at).TotalDays / 365 + " лет", 
+                    user.GetRole().name,
+                    "Редактировать",
+                    "Уволить",
+                    "Переквалифицировать"
                 });
             }
 
+        }
+
+        private void usersTable_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            var grid = (DataGridView)sender;
+            var sortIconColor = Color.White;
+            if (e.RowIndex == -1 && e.ColumnIndex > -1)
+            {
+                using (var b = new SolidBrush(BackColor))
+                {
+                   
+                    e.PaintBackground(e.CellBounds, false);
+
+                    
+                    TextRenderer.DrawText(e.Graphics, string.Format("{0}", e.FormattedValue),
+                        e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor,
+                        TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
+
+                   
+                    if (grid.SortedColumn?.Index == e.ColumnIndex)
+                    {
+                        var sortIcon = grid.SortOrder == SortOrder.Ascending ? "▲" : "▼";
+
+                        
+                        TextRenderer.DrawText(e.Graphics, sortIcon,
+                            e.CellStyle.Font, e.CellBounds, sortIconColor,
+                            TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
+                    }
+
+                    
+                    e.Handled = true;
+                }
+            }
         }
     }
 }
