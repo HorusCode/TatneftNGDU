@@ -39,13 +39,15 @@ namespace WindowsFormsApp1.UserControls
             foreach (var user in users)
             {
                 usersTable.Rows.Add(new object[] {
-                    user.firstname,
+                    user.FullName,
                     (int)(date - user.created_at).TotalDays / 365 + " лет", 
                     user.GetRole().name,
-                    "Редактировать",
-                    "Уволить",
-                    "Переквалифицировать"
+                    "Ред.",
+                    "Увол.",
+                    "Перекв."
                 });
+
+                usersTable.Rows[usersTable.RowCount - 1].Tag = user;
             }
            
         }
@@ -113,7 +115,17 @@ namespace WindowsFormsApp1.UserControls
 
         private void newUserBtn_Click(object sender, EventArgs e)
         {
-            new AddEditUser().Show();
+            new AddEditUser(null).Show();
+        }
+
+        private void usersTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3) //edit
+            {
+                new AddEditUser((User)usersTable.CurrentRow.Tag).ShowDialog();
+                LoadData();
+            }
+           
         }
     }
 }

@@ -33,6 +33,7 @@
             this.bunifuElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.closeApp = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.logoutBtn = new XanderUI.XUIButton();
             this.sidebarDivider = new System.Windows.Forms.Panel();
             this.usersBtn = new XanderUI.XUIButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,7 +42,6 @@
             this.header = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
             this.bunifuDragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.logoutBtn = new XanderUI.XUIButton();
             ((System.ComponentModel.ISupportInitialize)(this.closeApp)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,6 +82,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(225, 700);
             this.panel1.TabIndex = 11;
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.ButtonImage = ((System.Drawing.Image)(resources.GetObject("logoutBtn.ButtonImage")));
+            this.logoutBtn.ButtonStyle = XanderUI.XUIButton.Style.Material;
+            this.logoutBtn.ButtonText = "Выход";
+            this.logoutBtn.ClickBackColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.ClickTextColor = System.Drawing.Color.White;
+            this.logoutBtn.CornerRadius = 5;
+            this.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.logoutBtn.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.logoutBtn.HoverBackgroundColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.HoverTextColor = System.Drawing.Color.White;
+            this.logoutBtn.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.logoutBtn.Location = new System.Drawing.Point(14, 644);
+            this.logoutBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(199, 52);
+            this.logoutBtn.TabIndex = 2;
+            this.logoutBtn.TextColor = System.Drawing.Color.White;
+            this.logoutBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // sidebarDivider
             // 
@@ -172,30 +196,6 @@
             this.bunifuDragControl.TargetControl = this.header;
             this.bunifuDragControl.Vertical = true;
             // 
-            // logoutBtn
-            // 
-            this.logoutBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.logoutBtn.ButtonImage = ((System.Drawing.Image)(resources.GetObject("logoutBtn.ButtonImage")));
-            this.logoutBtn.ButtonStyle = XanderUI.XUIButton.Style.Material;
-            this.logoutBtn.ButtonText = "Выход";
-            this.logoutBtn.ClickBackColor = System.Drawing.Color.Transparent;
-            this.logoutBtn.ClickTextColor = System.Drawing.Color.White;
-            this.logoutBtn.CornerRadius = 5;
-            this.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoutBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.logoutBtn.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.logoutBtn.HoverBackgroundColor = System.Drawing.Color.Transparent;
-            this.logoutBtn.HoverTextColor = System.Drawing.Color.White;
-            this.logoutBtn.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.logoutBtn.Location = new System.Drawing.Point(14, 644);
-            this.logoutBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(199, 52);
-            this.logoutBtn.TabIndex = 2;
-            this.logoutBtn.TextColor = System.Drawing.Color.White;
-            this.logoutBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
-            // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -208,7 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "App";
-            this.Text = "App";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.closeApp)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

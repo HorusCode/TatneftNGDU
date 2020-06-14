@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             AddControlsPanel(new WorkersTableControl());
-            userFullName.Text = user.firstname;
+            userFullName.Text = user.FullName;
             userRole.Text = user.GetRole().name;
         }
 

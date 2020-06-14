@@ -20,9 +20,17 @@ namespace WindowsFormsApp1
 
         MicronDbContext micron = new MicronDbContext();
 
-        public AddEditUser()
+        User _User = null;
+
+        public AddEditUser(User user)
         {
             InitializeComponent();
+
+            _User = user;
+
+            
+            
+
 
             userBirthday.MaxDate = DateTime.Now.AddYears(-18);
             createdAt.Text = $"Дата устройства: {DateTime.Now.ToShortDateString()}";
@@ -35,6 +43,23 @@ namespace WindowsFormsApp1
                 item.Value = role.id;
                 userRole.Items.Add(item);
             }
+
+
+            if(_User != null)
+            {
+                userPatronymic.Text = _User.patronymic;
+                userSecondname.Text = _User.secondname;
+                userFirstname.Text = _User.firstname;
+                userBirthday.Value = _User.birthday;
+                userPlaceliving.Text = _User.placeliving;
+                userPassportSeries.Text = _User.passport_series.ToString();
+                userPassportNumber.Text = _User.passport_number.ToString();
+                userPassportPlace.Text = _User.passport_place;
+                userEmail.Text = _User.email;
+                userRole.SelectedIndex = userRole.FindStringExact(_User.GetRole().name);
+                createdAt.Text = $"Дата устройства: {_User.created_at}";
+            }
+           
         }
 
         private void closeApp_Click(object sender, EventArgs e)
@@ -44,7 +69,7 @@ namespace WindowsFormsApp1
 
         private bool validateInput()
         {
-            if(userFirstname.Text.Trim().Length < 2)
+            if (userFirstname.Text.Trim().Length < 2)
             {
                 showError("В фамилии минимум 2 символа");
                 return false;
@@ -76,7 +101,7 @@ namespace WindowsFormsApp1
                 showError("Только цифры в серии паспорта!");
                 return false;
             }
-            if (userPassportNumber.Text.Length != 4)
+            if (userPassportSeries.Text.Length != 4)
             {
                 showError("Должно быть 4 цифры в серии паспорта!");
                 return false;
@@ -99,7 +124,7 @@ namespace WindowsFormsApp1
                 showError("Введите корректную почту");
                 return false;
             }
-            
+
             return true;
         }
 
@@ -112,31 +137,58 @@ namespace WindowsFormsApp1
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            
 
-            if(validateInput())
+
+            if (validateInput())
             {
                 var compiller = new MySqlCompiler();
 
-                var query = new Query("users").AsInsert(new
-                {
-                    patronymic = userPatronymic.Text,
-                    secondname = userSecondname.Text,
-                    firstname = userFirstname.Text,
-                    birthday = userBirthday.Value,
-                    role_id = (userRole.SelectedItem as ComboboxItem).Value.ToString(),
-                    placeliving = userPlaceliving.Text,
-                    passport_series = userPassportSeries.Text,
-                    passport_number = userPassportNumber.Text,
-                    passport_place = userPassportPlace.Text,
-                    email = userEmail.Text,
-                });
 
+                var query = new Query("users");
+
+                if (_User == null)
+                {
+                    
+
+                  query = query.AsInsert(new
+                    {
+                        patronymic = userPatronymic.Text,
+                        secondname = userSecondname.Text,
+                        firstname = userFirstname.Text,
+                        birthday = userBirthday.Value,
+                        role_id = (userRole.SelectedItem as ComboboxItem).Value.ToString(),
+                        placeliving = userPlaceliving.Text,
+                        passport_series = userPassportSeries.Text,
+                        passport_number = userPassportNumber.Text,
+                        passport_place = userPassportPlace.Text,
+                        email = userEmail.Text,
+                    });
+
+
+                    
+                } else
+                {
+                    query = query.Where("id", _User.id).AsUpdate(new
+                    {
+                        patronymic = userPatronymic.Text,
+                        secondname = userSecondname.Text,
+                        firstname = userFirstname.Text,
+                        birthday = userBirthday.Value,
+                        role_id = (userRole.SelectedItem as ComboboxItem).Value.ToString(),
+                        placeliving = userPlaceliving.Text,
+                        passport_series = userPassportSeries.Text,
+                        passport_number = userPassportNumber.Text,
+                        passport_place = userPassportPlace.Text,
+                        email = userEmail.Text,
+                    });
+                   
+                }
 
                 micron.Exec(compiller.Compile(query).ToString());
+
             }
 
-           
+
         }
 
         private void timer_Tick(object sender, EventArgs e)

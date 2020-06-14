@@ -216,8 +216,10 @@
   <data name="userFirstname.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOYAAAAhCAYAAADNh9e3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAA+SURBVHhe7cMxEQAwCASw+jfFOwM8dGFI7vIAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAA4EeS2q1emR6NOep5ebs54QAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACcSURBVHhe7dMxDQMxAARB80fll2EERgDkZclNEHiLGema
+        63cAUWutz5zzZ2Z3t1s8WY6xD+C+3eLJUphQIUwIEiYECROChAlBwoQgYUKQMCFImBAkTAgSJgQJE4KE
+        CUHChCBhQpAwIUiYECRMCBImBAkTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROC/sJ8nue7DzO7u93iyRJo
+        GeMFgi2MIxFYfpkAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="closeApp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
