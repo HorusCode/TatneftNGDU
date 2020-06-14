@@ -21,7 +21,9 @@ namespace WindowsFormsApp1
         public Auth()
         {
             InitializeComponent();
-          
+
+            
+
         }
 
       

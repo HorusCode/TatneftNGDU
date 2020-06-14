@@ -33,6 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.11.5.2, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>..\..\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
@@ -45,6 +55,9 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\Micron.1.8.0\lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlKata, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlKata.2.2.0\lib\net45\SqlKata.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,11 +77,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers.cs" />
     <Compile Include="Models\Fires.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\__Relationships.cs" />
+    <Compile Include="AddEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditUser.Designer.cs">
+      <DependentUpon>AddEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers.cs" />
     <Compile Include="App.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +108,9 @@
     <Compile Include="UserControls\WorkersTableControl.Designer.cs">
       <DependentUpon>WorkersTableControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEditUser.resx">
+      <DependentUpon>AddEditUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="App.resx">
       <DependentUpon>App.cs</DependentUpon>
     </EmbeddedResource>

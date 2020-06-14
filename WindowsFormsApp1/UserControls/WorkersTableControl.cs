@@ -39,7 +39,7 @@ namespace WindowsFormsApp1.UserControls
             foreach (var user in users)
             {
                 usersTable.Rows.Add(new object[] {
-                    user.FullName,
+                    user.firstname,
                     (int)(date - user.created_at).TotalDays / 365 + " лет", 
                     user.GetRole().name,
                     "Редактировать",
@@ -109,6 +109,11 @@ namespace WindowsFormsApp1.UserControls
         private void reloadBtn_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void newUserBtn_Click(object sender, EventArgs e)
+        {
+            new AddEditUser().Show();
         }
     }
 }
