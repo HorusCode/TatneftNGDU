@@ -29,26 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Auth));
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
             this.xuiGradientPanel1 = new XanderUI.XUIGradientPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.loginBtn = new XanderUI.XUIButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.passwordInput = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.emailInput = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.closeApp = new Bunifu.Framework.UI.BunifuImageButton();
+            this.xuiGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeApp)).BeginInit();
             this.SuspendLayout();
             // 
             // xuiObjectEllipse1
@@ -61,6 +68,7 @@
             // 
             this.xuiGradientPanel1.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(47)))));
             this.xuiGradientPanel1.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(47)))));
+            this.xuiGradientPanel1.Controls.Add(this.pictureBox2);
             this.xuiGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.xuiGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.xuiGradientPanel1.Name = "xuiGradientPanel1";
@@ -70,6 +78,17 @@
             this.xuiGradientPanel1.TabIndex = 0;
             this.xuiGradientPanel1.TopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(125)))));
             this.xuiGradientPanel1.TopRight = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(125)))));
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 93);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(341, 293);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // loginBtn
             // 
@@ -92,6 +111,7 @@
             this.loginBtn.TabIndex = 1;
             this.loginBtn.TextColor = System.Drawing.Color.White;
             this.loginBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // label1
             // 
@@ -103,78 +123,79 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Пароль";
             // 
-            // bunifuTextBox1
+            // passwordInput
             // 
-            this.bunifuTextBox1.AcceptsReturn = false;
-            this.bunifuTextBox1.AcceptsTab = false;
-            this.bunifuTextBox1.AnimationSpeed = 200;
-            this.bunifuTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTextBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextBox1.BackgroundImage")));
-            this.bunifuTextBox1.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.bunifuTextBox1.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.bunifuTextBox1.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuTextBox1.BorderColorIdle = System.Drawing.Color.Silver;
-            this.bunifuTextBox1.BorderRadius = 1;
-            this.bunifuTextBox1.BorderThickness = 1;
-            this.bunifuTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox1.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.bunifuTextBox1.DefaultText = "";
-            this.bunifuTextBox1.FillColor = System.Drawing.Color.White;
-            this.bunifuTextBox1.HideSelection = true;
-            this.bunifuTextBox1.IconLeft = null;
-            this.bunifuTextBox1.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox1.IconPadding = 10;
-            this.bunifuTextBox1.IconRight = null;
-            this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(383, 361);
-            this.bunifuTextBox1.MaxLength = 32767;
-            this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.bunifuTextBox1.Modified = false;
-            this.bunifuTextBox1.Multiline = false;
-            this.bunifuTextBox1.Name = "bunifuTextBox1";
-            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.Empty;
-            stateProperties10.FillColor = System.Drawing.Color.White;
-            stateProperties10.ForeColor = System.Drawing.Color.Empty;
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.bunifuTextBox1.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.Silver;
-            stateProperties12.FillColor = System.Drawing.Color.White;
-            stateProperties12.ForeColor = System.Drawing.Color.Empty;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnIdleState = stateProperties12;
-            this.bunifuTextBox1.PasswordChar = '\0';
-            this.bunifuTextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.bunifuTextBox1.PlaceholderText = "Введите пароль...";
-            this.bunifuTextBox1.ReadOnly = false;
-            this.bunifuTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.bunifuTextBox1.SelectedText = "";
-            this.bunifuTextBox1.SelectionLength = 0;
-            this.bunifuTextBox1.SelectionStart = 0;
-            this.bunifuTextBox1.ShortcutsEnabled = true;
-            this.bunifuTextBox1.Size = new System.Drawing.Size(312, 44);
-            this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.bunifuTextBox1.TabIndex = 4;
-            this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bunifuTextBox1.TextMarginBottom = 0;
-            this.bunifuTextBox1.TextMarginLeft = 5;
-            this.bunifuTextBox1.TextMarginTop = 0;
-            this.bunifuTextBox1.TextPlaceholder = "Введите пароль...";
-            this.bunifuTextBox1.UseSystemPasswordChar = false;
-            this.bunifuTextBox1.WordWrap = true;
+            this.passwordInput.AcceptsReturn = false;
+            this.passwordInput.AcceptsTab = false;
+            this.passwordInput.AnimationSpeed = 200;
+            this.passwordInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.passwordInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.passwordInput.BackColor = System.Drawing.Color.Transparent;
+            this.passwordInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("passwordInput.BackgroundImage")));
+            this.passwordInput.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.passwordInput.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.passwordInput.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.passwordInput.BorderColorIdle = System.Drawing.Color.Silver;
+            this.passwordInput.BorderRadius = 1;
+            this.passwordInput.BorderThickness = 1;
+            this.passwordInput.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.passwordInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordInput.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.passwordInput.DefaultText = "";
+            this.passwordInput.FillColor = System.Drawing.Color.White;
+            this.passwordInput.HideSelection = true;
+            this.passwordInput.IconLeft = null;
+            this.passwordInput.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordInput.IconPadding = 10;
+            this.passwordInput.IconRight = null;
+            this.passwordInput.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordInput.Lines = new string[0];
+            this.passwordInput.Location = new System.Drawing.Point(383, 361);
+            this.passwordInput.MaxLength = 32767;
+            this.passwordInput.MinimumSize = new System.Drawing.Size(1, 1);
+            this.passwordInput.Modified = false;
+            this.passwordInput.Multiline = false;
+            this.passwordInput.Name = "passwordInput";
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passwordInput.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.Empty;
+            stateProperties6.FillColor = System.Drawing.Color.White;
+            stateProperties6.ForeColor = System.Drawing.Color.Empty;
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.passwordInput.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passwordInput.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passwordInput.OnIdleState = stateProperties8;
+            this.passwordInput.PasswordChar = '\0';
+            this.passwordInput.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.passwordInput.PlaceholderText = "Введите пароль...";
+            this.passwordInput.ReadOnly = false;
+            this.passwordInput.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.passwordInput.SelectedText = "";
+            this.passwordInput.SelectionLength = 0;
+            this.passwordInput.SelectionStart = 0;
+            this.passwordInput.ShortcutsEnabled = true;
+            this.passwordInput.Size = new System.Drawing.Size(312, 44);
+            this.passwordInput.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
+            this.passwordInput.TabIndex = 4;
+            this.passwordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.passwordInput.TextMarginBottom = 0;
+            this.passwordInput.TextMarginLeft = 5;
+            this.passwordInput.TextMarginTop = 0;
+            this.passwordInput.TextPlaceholder = "Введите пароль...";
+            this.passwordInput.UseSystemPasswordChar = false;
+            this.passwordInput.WordWrap = true;
+            this.passwordInput.Leave += new System.EventHandler(this.passwordInput_Leave);
             // 
             // emailInput
             // 
@@ -209,26 +230,26 @@
             this.emailInput.Modified = false;
             this.emailInput.Multiline = false;
             this.emailInput.Name = "emailInput";
-            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.emailInput.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.Empty;
-            stateProperties14.FillColor = System.Drawing.Color.White;
-            stateProperties14.ForeColor = System.Drawing.Color.Empty;
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.emailInput.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.emailInput.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Silver;
-            stateProperties16.FillColor = System.Drawing.Color.White;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.emailInput.OnIdleState = stateProperties16;
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.emailInput.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.Empty;
+            stateProperties2.FillColor = System.Drawing.Color.White;
+            stateProperties2.ForeColor = System.Drawing.Color.Empty;
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.emailInput.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.emailInput.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.emailInput.OnIdleState = stateProperties4;
             this.emailInput.PasswordChar = '\0';
             this.emailInput.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.emailInput.PlaceholderText = "Введите e-mail...";
@@ -248,6 +269,7 @@
             this.emailInput.TextPlaceholder = "Введите e-mail...";
             this.emailInput.UseSystemPasswordChar = false;
             this.emailInput.WordWrap = true;
+            this.emailInput.Leave += new System.EventHandler(this.emailInput_Leave);
             // 
             // label2
             // 
@@ -287,23 +309,48 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
+            // 
+            // closeApp
+            // 
+            this.closeApp.BackColor = System.Drawing.Color.Transparent;
+            this.closeApp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeApp.Image = ((System.Drawing.Image)(resources.GetObject("closeApp.Image")));
+            this.closeApp.ImageActive = null;
+            this.closeApp.Location = new System.Drawing.Point(681, 12);
+            this.closeApp.Name = "closeApp";
+            this.closeApp.Size = new System.Drawing.Size(32, 38);
+            this.closeApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.closeApp.TabIndex = 9;
+            this.closeApp.TabStop = false;
+            this.closeApp.Zoom = 10;
+            this.closeApp.Click += new System.EventHandler(this.closeApp_Click);
+            // 
             // Auth
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(725, 486);
+            this.Controls.Add(this.closeApp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.emailInput);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.bunifuTextBox1);
+            this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.xuiGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Auth";
             this.Text = "Form1";
+            this.xuiGradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeApp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,12 +362,15 @@
         private XanderUI.XUIButton loginBtn;
         private XanderUI.XUIGradientPanel xuiGradientPanel1;
         private System.Windows.Forms.Label label1;
-        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox bunifuTextBox1;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox passwordInput;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox emailInput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private Bunifu.Framework.UI.BunifuImageButton closeApp;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

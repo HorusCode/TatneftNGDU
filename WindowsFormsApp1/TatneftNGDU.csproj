@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -33,6 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.11.5.2, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>..\..\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
@@ -45,6 +55,9 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\Micron.1.8.0\lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlKata, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlKata.2.2.0\lib\net45\SqlKata.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,66 +77,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-      <Compile Include="Models\Character_Sets.cs" />
-      <Compile Include="Models\Collations.cs" />
-      <Compile Include="Models\Collation_Character_Set_Applicability.cs" />
-      <Compile Include="Models\Columns.cs" />
-      <Compile Include="Models\Column_Privileges.cs" />
-      <Compile Include="Models\Engines.cs" />
-      <Compile Include="Models\Events.cs" />
-      <Compile Include="Models\Files.cs" />
-      <Compile Include="Models\Global_Status.cs" />
-      <Compile Include="Models\Global_Variables.cs" />
-      <Compile Include="Models\Innodb_Buffer_Page.cs" />
-      <Compile Include="Models\Innodb_Buffer_Page_Lru.cs" />
-      <Compile Include="Models\Innodb_Buffer_Pool_Stats.cs" />
-      <Compile Include="Models\Innodb_Cmp.cs" />
-      <Compile Include="Models\Innodb_Cmpmem.cs" />
-      <Compile Include="Models\Innodb_Cmpmem_Reset.cs" />
-      <Compile Include="Models\Innodb_Cmp_Per_Index.cs" />
-      <Compile Include="Models\Innodb_Cmp_Per_Index_Reset.cs" />
-      <Compile Include="Models\Innodb_Cmp_Reset.cs" />
-      <Compile Include="Models\Innodb_Ft_Being_Deleted.cs" />
-      <Compile Include="Models\Innodb_Ft_Config.cs" />
-      <Compile Include="Models\Innodb_Ft_Default_Stopword.cs" />
-      <Compile Include="Models\Innodb_Ft_Deleted.cs" />
-      <Compile Include="Models\Innodb_Ft_Index_Cache.cs" />
-      <Compile Include="Models\Innodb_Ft_Index_Table.cs" />
-      <Compile Include="Models\Innodb_Locks.cs" />
-      <Compile Include="Models\Innodb_Lock_Waits.cs" />
-      <Compile Include="Models\Innodb_Metrics.cs" />
-      <Compile Include="Models\Innodb_Sys_Columns.cs" />
-      <Compile Include="Models\Innodb_Sys_Datafiles.cs" />
-      <Compile Include="Models\Innodb_Sys_Fields.cs" />
-      <Compile Include="Models\Innodb_Sys_Foreign.cs" />
-      <Compile Include="Models\Innodb_Sys_Foreign_Cols.cs" />
-      <Compile Include="Models\Innodb_Sys_Indexes.cs" />
-      <Compile Include="Models\Innodb_Sys_Tables.cs" />
-      <Compile Include="Models\Innodb_Sys_Tablespaces.cs" />
-      <Compile Include="Models\Innodb_Sys_Tablestats.cs" />
-      <Compile Include="Models\Innodb_Trx.cs" />
-      <Compile Include="Models\Key_Column_Usage.cs" />
-      <Compile Include="Models\Optimizer_Trace.cs" />
-      <Compile Include="Models\Parameters.cs" />
-      <Compile Include="Models\Partitions.cs" />
-      <Compile Include="Models\Plugins.cs" />
-      <Compile Include="Models\Processlist.cs" />
-      <Compile Include="Models\Profiling.cs" />
-      <Compile Include="Models\Referential_Constraints.cs" />
-      <Compile Include="Models\Routines.cs" />
-      <Compile Include="Models\Schemata.cs" />
-      <Compile Include="Models\Schema_Privileges.cs" />
-      <Compile Include="Models\Session_Status.cs" />
-      <Compile Include="Models\Session_Variables.cs" />
-      <Compile Include="Models\Statistics.cs" />
-      <Compile Include="Models\Tables.cs" />
-      <Compile Include="Models\Tablespaces.cs" />
-      <Compile Include="Models\Table_Constraints.cs" />
-      <Compile Include="Models\Table_Privileges.cs" />
-      <Compile Include="Models\Triggers.cs" />
-      <Compile Include="Models\User_Privileges.cs" />
-      <Compile Include="Models\Views.cs" />
-      <Compile Include="Models\__Relationships.cs" />
+    <Compile Include="Models\Fires.cs" />
+    <Compile Include="Models\Roles.cs" />
+    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\__Relationships.cs" />
+    <Compile Include="AddEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditUser.Designer.cs">
+      <DependentUpon>AddEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers.cs" />
+    <Compile Include="App.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App.Designer.cs">
+      <DependentUpon>App.cs</DependentUpon>
+    </Compile>
     <Compile Include="Auth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +102,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\WorkersTableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkersTableControl.Designer.cs">
+      <DependentUpon>WorkersTableControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddEditUser.resx">
+      <DependentUpon>AddEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App.resx">
+      <DependentUpon>App.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +126,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\WorkersTableControl.resx">
+      <DependentUpon>WorkersTableControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -158,5 +143,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
