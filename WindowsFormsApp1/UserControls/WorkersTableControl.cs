@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Micron;
 using Data.Models;
+using SqlKata;
+using SqlKata.Compilers;
 
 namespace WindowsFormsApp1.UserControls
 {
 
-        public partial class WorkersTableControl : UserControl
+    public partial class WorkersTableControl : UserControl
     {
         MicronDbContext micron = new MicronDbContext();
         public WorkersTableControl()
@@ -34,26 +36,30 @@ namespace WindowsFormsApp1.UserControls
 
             DateTime date = DateTime.Now;
 
-            
+
 
             foreach (var user in users)
             {
-                usersTable.Rows.Add(new object[] {
+                if (!user.HasFires())
+                {
+                    usersTable.Rows.Add(new object[] {
                     user.FullName,
-                    (int)(date - user.created_at).TotalDays / 365 + " лет", 
+                    (int)(date - user.created_at).TotalDays / 365 + " лет",
                     user.GetRole().name,
                     "Ред.",
                     "Увол.",
                     "Перекв."
                 });
 
-                usersTable.Rows[usersTable.RowCount - 1].Tag = user;
+                    usersTable.Rows[usersTable.RowCount - 1].Tag = user;
+                }
+
             }
-           
+
         }
 
 
-     
+
         private void usersTable_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             var grid = (DataGridView)sender;
@@ -62,26 +68,26 @@ namespace WindowsFormsApp1.UserControls
             {
                 using (var b = new SolidBrush(BackColor))
                 {
-                   
+
                     e.PaintBackground(e.CellBounds, false);
 
-                    
+
                     TextRenderer.DrawText(e.Graphics, string.Format("{0}", e.FormattedValue),
                         e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor,
                         TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
 
-                   
+
                     if (grid.SortedColumn?.Index == e.ColumnIndex)
                     {
                         var sortIcon = grid.SortOrder == SortOrder.Ascending ? "▲" : "▼";
 
-                        
+
                         TextRenderer.DrawText(e.Graphics, sortIcon,
                             e.CellStyle.Font, e.CellBounds, sortIconColor,
                             TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
                     }
 
-                    
+
                     e.Handled = true;
                 }
             }
@@ -93,18 +99,19 @@ namespace WindowsFormsApp1.UserControls
             usersTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             foreach (DataGridViewRow row in usersTable.Rows)
             {
-                for(int i = 0; i < row.Cells.Count - 3; i++) // Чтобы не искал кнопки
+                for (int i = 0; i < row.Cells.Count - 3; i++) // Чтобы не искал кнопки
                 {
                     if (row.Cells[i].Value.ToString().Like(search))
                     {
                         row.Selected = true;
                         break;
-                    } else
+                    }
+                    else
                     {
                         row.Selected = false;
                     }
                 }
-                
+
             }
         }
 
@@ -125,7 +132,44 @@ namespace WindowsFormsApp1.UserControls
                 new AddEditUser((User)usersTable.CurrentRow.Tag).ShowDialog();
                 LoadData();
             }
-           
+            if (e.ColumnIndex == 4) //delete
+            {
+                User user = (User)usersTable.CurrentRow.Tag;
+                if (MessageBox.Show("Уволить " + user.FullName + "?", "CONFIRM", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                {
+                    var compille = new MySqlCompiler();
+
+                    var query = new Query("fires").AsInsert(new
+                    {
+                        user_id = user.id,
+                        status = 0,
+                        updated_at = DateTime.Now
+                    });
+
+                    micron.Exec(compille.Compile(query).ToString());
+                    LoadData();
+                }
+            }
+
+            if (e.ColumnIndex == 5) //retraining
+            {
+                User user = (User)usersTable.CurrentRow.Tag;
+                if (MessageBox.Show("Отправить на переквалификацию " + user.FullName + "?", "CONFIRM", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                {
+                    var compille = new MySqlCompiler();
+
+                    var query = new Query("fires").AsInsert(new
+                    {
+                        user_id = user.id,
+                        status = 1,
+                        updated_at = DateTime.Now
+                    });
+
+                    micron.Exec(compille.Compile(query).ToString());
+                    LoadData();
+                }
+            }
+
         }
     }
 }
