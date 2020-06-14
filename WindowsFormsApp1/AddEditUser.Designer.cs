@@ -89,8 +89,11 @@
             this.createdAt = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.userEmail = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.errorPanel = new System.Windows.Forms.Panel();
+            this.errorMessage = new System.Windows.Forms.Label();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeApp)).BeginInit();
+            this.errorPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -196,7 +199,7 @@
             this.userFirstname.SelectionLength = 0;
             this.userFirstname.SelectionStart = 0;
             this.userFirstname.ShortcutsEnabled = true;
-            this.userFirstname.Size = new System.Drawing.Size(230, 44);
+            this.userFirstname.Size = new System.Drawing.Size(230, 33);
             this.userFirstname.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.userFirstname.TabIndex = 3;
             this.userFirstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -957,11 +960,31 @@
             this.userEmail.UseSystemPasswordChar = false;
             this.userEmail.WordWrap = true;
             // 
+            // errorPanel
+            // 
+            this.errorPanel.BackColor = System.Drawing.Color.Red;
+            this.errorPanel.Controls.Add(this.errorMessage);
+            this.errorPanel.Location = new System.Drawing.Point(1, 77);
+            this.errorPanel.Name = "errorPanel";
+            this.errorPanel.Size = new System.Drawing.Size(618, 20);
+            this.errorPanel.TabIndex = 28;
+            // 
+            // errorMessage
+            // 
+            this.errorMessage.AutoSize = true;
+            this.errorMessage.ForeColor = System.Drawing.Color.White;
+            this.errorMessage.Location = new System.Drawing.Point(280, -1);
+            this.errorMessage.Name = "errorMessage";
+            this.errorMessage.Size = new System.Drawing.Size(51, 20);
+            this.errorMessage.TabIndex = 0;
+            this.errorMessage.Text = "{error}";
+            // 
             // AddEditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(621, 619);
+            this.Controls.Add(this.errorPanel);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.userEmail);
             this.Controls.Add(this.createdAt);
@@ -992,6 +1015,8 @@
             this.Text = "AddEditUser";
             this.header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.closeApp)).EndInit();
+            this.errorPanel.ResumeLayout(false);
+            this.errorPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1025,5 +1050,7 @@
         private Bunifu.UI.WinForms.BunifuDatePicker userBirthday;
         private System.Windows.Forms.Label label10;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox userEmail;
+        private System.Windows.Forms.Panel errorPanel;
+        private System.Windows.Forms.Label errorMessage;
     }
 }
