@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
         private void usersBtn_Click(object sender, EventArgs e)
         {
             moveSidebarDivider(usersBtn);
+            AddControlsPanel(new WorkersTableControl());
         }
 
         private void closeApp_Click(object sender, EventArgs e)
@@ -51,6 +52,18 @@ namespace WindowsFormsApp1
         {
             this.DialogResult = DialogResult.No;
             this.Close();
+        }
+
+        private void firedUsersBtn_Click(object sender, EventArgs e)
+        {
+            moveSidebarDivider(firedUsersBtn);
+            AddControlsPanel(new FiredUsersTableControl());
+        }
+
+        private void retrainingUsersBtn_Click(object sender, EventArgs e)
+        {
+            moveSidebarDivider(retrainingUsersBtn);
+            AddControlsPanel(new RetariningUsersTableControl());
         }
     }
 }

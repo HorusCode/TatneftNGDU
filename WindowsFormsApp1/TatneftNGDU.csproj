@@ -102,6 +102,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\FiredUsersTableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FiredUsersTableControl.Designer.cs">
+      <DependentUpon>FiredUsersTableControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RetariningUsersTableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RetariningUsersTableControl.Designer.cs">
+      <DependentUpon>RetariningUsersTableControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WorkersTableControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +138,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\FiredUsersTableControl.resx">
+      <DependentUpon>FiredUsersTableControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RetariningUsersTableControl.resx">
+      <DependentUpon>RetariningUsersTableControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\WorkersTableControl.resx">
       <DependentUpon>WorkersTableControl.cs</DependentUpon>
     </EmbeddedResource>

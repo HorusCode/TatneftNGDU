@@ -42,6 +42,8 @@
             this.header = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
             this.bunifuDragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.firedUsersBtn = new XanderUI.XUIButton();
+            this.retrainingUsersBtn = new XanderUI.XUIButton();
             ((System.ComponentModel.ISupportInitialize)(this.closeApp)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +75,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(142)))), ((int)(((byte)(85)))));
+            this.panel1.Controls.Add(this.retrainingUsersBtn);
+            this.panel1.Controls.Add(this.firedUsersBtn);
             this.panel1.Controls.Add(this.logoutBtn);
             this.panel1.Controls.Add(this.sidebarDivider);
             this.panel1.Controls.Add(this.usersBtn);
@@ -196,6 +200,54 @@
             this.bunifuDragControl.TargetControl = this.header;
             this.bunifuDragControl.Vertical = true;
             // 
+            // firedUsersBtn
+            // 
+            this.firedUsersBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.firedUsersBtn.ButtonImage = ((System.Drawing.Image)(resources.GetObject("firedUsersBtn.ButtonImage")));
+            this.firedUsersBtn.ButtonStyle = XanderUI.XUIButton.Style.Material;
+            this.firedUsersBtn.ButtonText = "Уволенные сотрудники";
+            this.firedUsersBtn.ClickBackColor = System.Drawing.Color.Transparent;
+            this.firedUsersBtn.ClickTextColor = System.Drawing.Color.White;
+            this.firedUsersBtn.CornerRadius = 5;
+            this.firedUsersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.firedUsersBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.firedUsersBtn.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.firedUsersBtn.HoverBackgroundColor = System.Drawing.Color.Transparent;
+            this.firedUsersBtn.HoverTextColor = System.Drawing.Color.White;
+            this.firedUsersBtn.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.firedUsersBtn.Location = new System.Drawing.Point(14, 134);
+            this.firedUsersBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.firedUsersBtn.Name = "firedUsersBtn";
+            this.firedUsersBtn.Size = new System.Drawing.Size(199, 52);
+            this.firedUsersBtn.TabIndex = 3;
+            this.firedUsersBtn.TextColor = System.Drawing.Color.White;
+            this.firedUsersBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.firedUsersBtn.Click += new System.EventHandler(this.firedUsersBtn_Click);
+            // 
+            // retrainingUsersBtn
+            // 
+            this.retrainingUsersBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.retrainingUsersBtn.ButtonImage = ((System.Drawing.Image)(resources.GetObject("retrainingUsersBtn.ButtonImage")));
+            this.retrainingUsersBtn.ButtonStyle = XanderUI.XUIButton.Style.Material;
+            this.retrainingUsersBtn.ButtonText = "Отправленные на переквалификацию";
+            this.retrainingUsersBtn.ClickBackColor = System.Drawing.Color.Transparent;
+            this.retrainingUsersBtn.ClickTextColor = System.Drawing.Color.White;
+            this.retrainingUsersBtn.CornerRadius = 5;
+            this.retrainingUsersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.retrainingUsersBtn.Font = new System.Drawing.Font("Segoe UI", 8.2F, System.Drawing.FontStyle.Bold);
+            this.retrainingUsersBtn.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.retrainingUsersBtn.HoverBackgroundColor = System.Drawing.Color.Transparent;
+            this.retrainingUsersBtn.HoverTextColor = System.Drawing.Color.White;
+            this.retrainingUsersBtn.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.retrainingUsersBtn.Location = new System.Drawing.Point(14, 194);
+            this.retrainingUsersBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.retrainingUsersBtn.Name = "retrainingUsersBtn";
+            this.retrainingUsersBtn.Size = new System.Drawing.Size(199, 52);
+            this.retrainingUsersBtn.TabIndex = 4;
+            this.retrainingUsersBtn.TextColor = System.Drawing.Color.White;
+            this.retrainingUsersBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.retrainingUsersBtn.Click += new System.EventHandler(this.retrainingUsersBtn_Click);
+            // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -232,5 +284,7 @@
         private System.Windows.Forms.Panel container;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl;
         private XanderUI.XUIButton logoutBtn;
+        private XanderUI.XUIButton retrainingUsersBtn;
+        private XanderUI.XUIButton firedUsersBtn;
     }
 }

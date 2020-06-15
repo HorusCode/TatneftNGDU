@@ -40,7 +40,7 @@ namespace WindowsFormsApp1.UserControls
 
             foreach (var user in users)
             {
-                if (!user.HasFires())
+                if (user.GetFires().Count() == 0)
                 {
                     usersTable.Rows.Add(new object[] {
                     user.FullName,
